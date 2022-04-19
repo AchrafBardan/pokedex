@@ -1,0 +1,18 @@
+{% block content %}
+    <div class="grid grid-cols-5 gap-5 p-4">
+        {% for pokemon in pokemons %}
+            <article class="p-4 bg-white rounded-lg">
+                <div class="flex flex-col">
+                    <img class="object-cover" src="{{ pokemon.image }}">
+                </div>
+                <p class="text-2xl font-semibold">{{ pokemon.name }}</p>
+                <p class="text-sm font-semibold text-gray-400">#{{ pokemon.pokemonNr }}</p>
+                <div class="flex justify-between">
+                    <p class="text-sm font-semibold text-blue-400">{{ pokemon.type }}</p>
+                    <p class="text-sm font-semibold text-blue-400">{{ pokemon.height }}</p>
+                    <p class="text-sm font-semibold text-blue-400">{{ pokemon.weight }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}

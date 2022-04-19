@@ -8,6 +8,17 @@
     <title>{% block pageTitle %}{% endblock %} - Pokedex</title>
 </head>
 <body>
+    <script>
+        function setApiContent(url, domElementId) {
+            const domElement = document.getElementById(domElementId);
+
+            fetch(url).then(async (response) => {
+                const html = await response.text()
+
+                domElement.insertAdjacentHTML('beforeend', html)
+            })
+        }
+    </script>
     <div class="h-screen bg-gray-100">
         {% block content %}{% endblock %}
     </div>

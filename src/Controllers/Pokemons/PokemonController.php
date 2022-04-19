@@ -8,7 +8,12 @@ class PokemonController extends Controller
 {
     public function index()
     {
-        echo $this->twig->render('pokemons/index.html', [
+        echo $this->twig->render('pokemons/index.html');
+    }
+
+    public function indexApi()
+    {
+        echo $this->twig->render('pokemons/indexApi.html', [
             'pokemons' => $this->queryBuilder->from('pokemons')->select('*')->executeQuery()->fetchAllAssociative(),
         ]);
     }

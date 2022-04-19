@@ -4,9 +4,14 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $router = new \Bramus\Router\Router();
 
-$routes = include __DIR__ . '/../routes/web.php';
+$webRoutes = include __DIR__ . '/../routes/web.php';
+$apiRoutes = include __DIR__ . '/../routes/api.php';
 
-foreach ($routes as $methodPath => $action) {
+foreach (array_merge($webRoutes, $apiRoutes) as $methodPath => $action) {
+    addRoute($methodPath, $action, $router);
+}
+
+function addRoute($methodPath, $action, $router) {
     [$method, $path] = explode(' ', $methodPath);
     [$controller, $action] = explode('@', $action);
 
@@ -18,6 +23,6 @@ foreach ($routes as $methodPath => $action) {
             dd($th);
         }
     });
-}
+} 
 
 return $router->run();

@@ -1,20 +1,11 @@
 {% extends "layouts/index.html" %}
 
-{% block pageTitle %}
-    Pokemons
-{% endblock %}
-
 {% block content %}
-    <div class="grid grid-cols-5 gap-5 p-4">
-        {% for pokemon in pokemons %}
-            <div class="p-4 bg-white rounded-lg">
-                <div class="flex flex-col">
-                    <img class="object-cover" src="{{ pokemon.image }}">
-                </div>
-                <p class="text-2xl font-semibold">{{ pokemon.name }}</p>
-            </div>
-        {% endfor %}
-    </div>
+    <div id="pokemonsIndexContent" />
+
+    <script>
+        setApiContent('/api/pokemons', 'pokemonsIndexContent');
+    </script>
 {% endblock %}
 
 
