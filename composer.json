@@ -1,0 +1,15 @@
+{
+    "name": "achrafbardan/pokedex",
+    "autoload": {
+        "psr-4": {
+            "Achrafbardan\\Pokedex\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Achraf Bardan",
+            "email": "achrafbardan@gmail.com"
+        }
+    ],
+    "require": {}
+}
