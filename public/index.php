@@ -12,7 +12,11 @@ foreach ($routes as $methodPath => $action) {
 
     $router->match($method, $path, function () use ($controller, $action) {
         $controller = new $controller();
-        return $controller->{$action}();
+        try {
+            return $controller->{$action}();
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     });
 }
 
