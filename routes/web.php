@@ -1,7 +1,7 @@
 <?php
 
-use Achrafbardan\Pokedex\Controllers\WelcomeController;
+use Achrafbardan\Pokedex\Controllers\Pokemons\PokemonController;
 
 return [
-    'GET /' => WelcomeController::class . '@index',
+    'GET /pokemons' => PokemonController::class . '@index',
 ];
