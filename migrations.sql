@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS `pokemons`;
 CREATE TABLE IF NOT EXISTS `pokemons` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `pokemonNr` int NOT NULL,
+  `image` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `height` int NOT NULL,
