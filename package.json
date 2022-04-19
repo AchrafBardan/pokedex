@@ -1,0 +1,23 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AchrafBardan/pokedex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AchrafBardan/pokedex/issues"
+  },
+  "homepage": "https://github.com/AchrafBardan/pokedex#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^2.2.16"
+  }
+}
