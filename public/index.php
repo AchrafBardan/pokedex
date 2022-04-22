@@ -2,6 +2,8 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+session_start();
+
 $router = new \Bramus\Router\Router();
 
 $webRoutes = include __DIR__ . '/../routes/web.php';

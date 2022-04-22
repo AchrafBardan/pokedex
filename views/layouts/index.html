@@ -24,9 +24,29 @@
         <a href="/">
             <img src="/img/logo.png" alt="Pokedex Logo" class="w-32">
         </a>
-        <ul class="ml-10" class="flex">
-            <li><a href="/pokemons">Pokemons</a></li>
-        </ul>
+        <div class="flex justify-between w-full">
+            <ul class="flex ml-10 space-x-4">
+                <li><a href="/pokemons">Pokemons</a></li>
+                {% if currentUser %}
+                    <li><a href="/pokemons/create">Create a pokemon</a></li>
+                {% endif %}
+            </ul>
+            {% if currentUser %}
+                <div class="flex space-x-2">
+                    <p>
+                        {{ currentUser.name }}
+                    </p>
+                    <form action="/logout" method="post">
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
+            {% else %}
+                <ul class="flex ml-10 space-x-4">
+                    <li><a href="/signup">Signup</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            {% endif %}
+        </div>
     </nav>
 
     <div class="h-screen bg-gray-100">

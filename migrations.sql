@@ -13,8 +13,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 -- Structuur van  tabel pokedex.pokemons wordt geschreven
-DROP TABLE IF EXISTS `pokemons`;
-CREATE TABLE IF NOT EXISTS `pokemons` (
+CREATE TABLE `pokemons` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `pokemonNr` int NOT NULL,
   `image` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -22,6 +21,19 @@ CREATE TABLE IF NOT EXISTS `pokemons` (
   `type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `height` int NOT NULL,
   `weight` int NOT NULL,
+  `userId` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pokemons_userId_IDX` (`userId`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Structuur van  tabel pokedex.users wordt geschreven
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  UNIQUE (`email`)
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

@@ -1,0 +1,23 @@
+{% extends "layouts/index.html" %}
+
+{% block pageTitle %}Create pokemon{% endblock %}
+
+{% block content %}
+    <div class="flex justify-center p-4">
+        <div class="p-4 bg-white rounded-lg">
+            <h1 class="text-3xl font-semibold">Signup</h1>
+            {% if message %}
+                <div class="p-4 text-white bg-red-500 rounded-lg">
+                    {{ message }}
+                </div>
+            {% endif %}
+            <form action="/signup" method="post" class="flex flex-col mt-2 space-y-4 w-96">
+                <input placeholder="Name" type="text" name="name">
+                <input placeholder="Email" type="email" name="email">
+                <input placeholder="Password" type="password" name="password">
+                <button type="submit" class="w-full p-2 text-white bg-blue-500 rounded-lg">Signup</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
